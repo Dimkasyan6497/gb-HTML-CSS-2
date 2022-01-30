@@ -1,0 +1,111 @@
+$black-text-color: #222222;
+$grey-text-color: #B1B1B1;
+
+@mixin registration-form-text--black {
+  font: 300 16px/19px 'Lato';
+  color: $black-text-color;
+  margin-bottom: 20px;
+}
+  
+@mixin registration-form-text--grey {
+  font: 300 13px/16px 'Lato';
+  color: $grey-text-color;
+  margin-bottom: 40px;
+}
+
+@mixin loyalty-text {
+  font: 300 24px/29px 'Lato';
+  color: black;
+}
+
+@mixin radio-text {
+  font: 300 11px/13px 'Lato';
+  color: black;
+}
+
+@mixin placeholder-text {
+  font: 300 13px/16px 'Lato';
+  color: $grey-text-color;
+}
+
+.form-text--black {@include registration-form-text--black();}
+
+.form-text--grey {@include registration-form-text--grey();}
+
+.loyalty {@include loyalty-text();}
+
+.wrap-registration {
+  display: flex;
+  padding-top: 65px;
+  padding-bottom: 95px;
+
+  .registration-form {
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+
+    .radio-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+
+      .radio-text {
+        margin-left: 10px;
+        margin-right: 15px;
+        @include radio-text();
+      }
+    }
+
+    .registration-input {
+      width: 100%;
+      margin-bottom: 20px;
+      padding: 14px;
+      @include placeholder-text();
+      color:black;
+      border: 1px solid #A4A4A4
+    }
+
+    .registration-input::placeholder {
+      @include placeholder-text();
+    }
+
+    .registrtion-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font: 16px/19px 'Lato';
+      color: #fff;
+      border: 1px solid #F16D7F;
+      background-color: #F16D7F;
+      fill: #fff;
+    }
+
+    .registrtion-button:hover {
+      background-color: #fff;
+      color: #F16D7F;
+      cursor: pointer;
+      fill: #F16D7F;
+    }
+
+    .registration-arrow {
+      margin-left: 15px;
+    }
+  }
+
+  .loyalty {
+    padding-left: 128px;
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-image: url(../Assets/svg/registrationliimage.svg);
+      list-style-position: inside;
+    }
+
+    li {
+      margin-bottom: 16px;
+    }
+  }
+}
